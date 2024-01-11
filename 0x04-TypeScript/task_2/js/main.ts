@@ -62,3 +62,14 @@ function executeWork(employee: (Director | Teacher)): void {
     console.log(employee.workTeacherTasks());
   }
 }
+
+export type Subjects = ('Math' | 'History');
+
+export function teachClass(todayClass: Subjects): string {
+  if (todayClass === 'History') {
+    return 'Teaching History';
+  }
+  if (todayClass === 'Math') {
+    return 'Teaching Math';
+  }
+}

@@ -24,7 +24,7 @@ app.post('/login', (request, resp) => {
     username = request.body.userName;
   }
 
-  res.send(`Welcome ${username}`);
+  resp.send(`Welcome ${username}`);
 });
 
 app.listen(PORT, () => {

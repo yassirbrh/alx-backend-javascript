@@ -20,20 +20,19 @@ function countStudents(filePath) {
       dict[rowData[3]] = { length: 1, list: [rowData[0]] };
     }
   }
-  let result = '';
   for (const key in dict) {
     if (Object.prototype.hasOwnProperty.call(dict, key)) {
-      result += `Number of students in ${key}: ${dict[key].length}.`;
+      let result = `Number of students in ${key}: ${dict[key].length}.`;
       result += ' List: ';
 
       for (let i = 0; i < dict[key].length - 1; i += 1) {
         result += `${dict[key].list[i]}, `;
       }
 
-      result += `${dict[key].list[dict[key].length - 1]}\n`;
+      result += `${dict[key].list[dict[key].length - 1]}`;
+      console.log(result);
     }
   }
-  console.log(result.trim());
 }
 
 module.exports = countStudents;

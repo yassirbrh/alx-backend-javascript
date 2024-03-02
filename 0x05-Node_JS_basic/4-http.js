@@ -17,3 +17,5 @@ const app = http.createServer((_, resp) => {
 app.listen(port, host, () => {
   process.stdout.write(`Server listening at -> http://${host}:${port}\n`);
 });
+
+module.exports = app;

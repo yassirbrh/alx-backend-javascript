@@ -4,6 +4,8 @@ const express = require('express');
 const app = express();
 const PORT = 7865;
 
+app.use(express.json());
+
 app.get('/', (_, res) => {
   res.send('Welcome to the payment system');
 });
@@ -17,14 +19,14 @@ app.get('/available_payments', (_req, resp) => {
   resp.json({ payment_methods: { credit_cards: true, paypal: false } });
 });
 
-app.post('/login', (request, resp) => {
+app.post('/login', (req, res) => {
   let username = '';
 
-  if (request.body) {
-    username = request.body.userName;
+  if (req.body) {
+    username = req.body.userName;
   }
 
-  resp.send(`Welcome ${username}`);
+  res.send(`Welcome ${username}`);
 });
 
 app.listen(PORT, () => {

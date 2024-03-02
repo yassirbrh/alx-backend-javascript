@@ -55,7 +55,7 @@ const app = http.createServer(async (req, res) => {
       res.end(data);
     } catch (error) {
       res.writeHead(500, { 'Content-Type': 'text/plain' });
-      res.end(error.message);
+      res.end(`This is the list of our students\n${error.message}`);
     }
   } else {
     res.writeHead(404, { 'Content-Type': 'text/plain' });
